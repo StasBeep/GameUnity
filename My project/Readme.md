@@ -1,6 +1,6 @@
 
 > Старый формат кода на стрельбу с разных клавиш
-```
+```c#
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
