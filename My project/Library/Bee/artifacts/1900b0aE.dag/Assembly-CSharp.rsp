@@ -358,12 +358,17 @@
 "Assets/Scripts/DestroyCrystal.cs"
 "Assets/Scripts/Enemy.cs"
 "Assets/Scripts/EnemyAnimals.cs"
+"Assets/Scripts/Gun.cs"
 "Assets/Scripts/Menu.cs"
 "Assets/Scripts/MenuControlPlayer.cs"
+"Assets/Scripts/Pistol.cs"
 "Assets/Scripts/PlayerBaxGun.cs"
 "Assets/Scripts/PlayerHp.cs"
 "Assets/Scripts/PlayerLook.cs"
 "Assets/Scripts/PlayerMove.cs"
+"Assets/Scripts/Rifle.cs"
+"Assets/Scripts/Shotgun.cs"
+"Assets/Scripts/SwitchGun.cs"
 "Assets/Scripts/YouLoseRestart.cs"
 -langversion:9.0
 
