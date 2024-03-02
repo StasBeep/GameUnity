@@ -46,6 +46,6 @@ public class Gun : MonoBehaviour
     {
         // В течении игры в переменную кладём время игры в милисекундах
         timer += Time.deltaTime;
-        print(timer);
+        // print(timer);
     }
 }

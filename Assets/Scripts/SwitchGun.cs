@@ -8,6 +8,7 @@ public class SwitchGun : MonoBehaviour
     [SerializeField] GameObject pistol;
     [SerializeField] GameObject avtomat;
     [SerializeField] GameObject shotgun;
+    [SerializeField] GameObject rpg;
 
     // Определение каким оружием будем стрелять
     int weapon = 0;
@@ -21,24 +22,27 @@ public class SwitchGun : MonoBehaviour
                 pistol.SetActive(true);
                 avtomat.SetActive(false);
                 shotgun.SetActive(false);
+                rpg.SetActive(false);
                 break;
             case "Автомат":
                 pistol.SetActive(false);
                 avtomat.SetActive(true);
                 shotgun.SetActive(false);
+                rpg.SetActive(false);
                 break;
             case "Дробовик":
                 pistol.SetActive(false);
                 avtomat.SetActive(false);
                 shotgun.SetActive(true);
+                rpg.SetActive(false);
+                break;
+            case "РПГ":
+                pistol.SetActive(false);
+                avtomat.SetActive(false);
+                shotgun.SetActive(false);
+                rpg.SetActive(true);
                 break;
         }
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
     }
 
     // Update is called once per frame
@@ -60,6 +64,11 @@ public class SwitchGun : MonoBehaviour
             ChooseWeapon("Дробовик");
             weapon = 3;
         }
+        if (Input.GetKey(KeyCode.Alpha4))
+        {
+            ChooseWeapon("РПГ");
+            weapon = 4;
+        }
 
         // Если зажата левая кнопка мыши
         if (Input.GetMouseButton(0))
@@ -78,6 +87,9 @@ public class SwitchGun : MonoBehaviour
                 case 3:
                     shotgun.GetComponent<Gun>().Shoot();
                     // shotgun.GetComponent<Gun>().Update();
+                    break;
+                case 4:
+                    rpg.GetComponent<Gun>().Shoot();
                     break;
             }
         }
