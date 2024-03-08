@@ -11,6 +11,8 @@ TagManager:
   - Enemy
   - Sniper
   - Apteka
+  - EnemyTurretOOP
+  - EnemyAnimalsOOP
   layers:
   - Default
   - TransparentFX

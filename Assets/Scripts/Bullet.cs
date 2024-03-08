@@ -8,19 +8,23 @@ public class Bullet : MonoBehaviour
     Vector3 direction; // Направление снаряда
 
     // Метод определения направления при выстреле
-    public void setDirection(Vector3 dir) {
+    public void setDirection(Vector3 dir)
+    {
         direction = dir;
     }
 
     // Функция полёта пули с учётом мощностей компьтера (равные права)
-    void FixedUpdate () {
+    void FixedUpdate()
+    {
         transform.position += direction * speed * Time.deltaTime;
     }
 
     // Функция соприкосновения пули с объектами
-    void OnTriggerEnter(Collider other) {
+    void OnTriggerEnter(Collider other)
+    {
         // Если пуля конётся врага
-        if(other.tag == "Enemy") {
+        if (other.tag == "Enemy")
+        {
             other.GetComponent<Animator>().SetTrigger("death");
 
             // ! Удаление капсулы (collaider), в полоении лёжа, капусула
@@ -36,9 +40,34 @@ public class Bullet : MonoBehaviour
         }
 
         // Если коснётся игрока
-        if(other.tag == "Player") {
+        if (other.tag == "Player")
+        {
             // print("Попадание");
             other.GetComponent<PlayerHp>().changeHpBux(20);
+        }
+
+        if (other.tag == "EnemyAnimalsOOP")
+        {
+            other.GetComponent<Animator>().SetTrigger("death");
+            Destroy(other);
+            Destroy(other.GetComponent<EnemyBase>());
+            Destroy(other.gameObject, 15);
+        }
+
+        if (other.tag == "EnemyTurretOOP")
+        {
+            other.GetComponent<Animator>().SetTrigger("death");
+            Destroy(other);
+            Destroy(other.GetComponent<EnemyBase>());
+            Destroy(other.gameObject, 15);
+        }
+
+        if (other.tag == "Sniper")
+        {
+            other.GetComponent<Animator>().SetTrigger("death");
+            Destroy(other);
+            Destroy(other.GetComponent<EnemyBase>());
+            Destroy(other.gameObject, 15);
         }
 
         // Уничтожение пули, если она коснётся любого предмета

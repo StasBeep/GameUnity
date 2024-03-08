@@ -47,6 +47,30 @@ public class Rocket : MonoBehaviour
             other.GetComponent<PlayerHp>().changeHpBux(50);
         }
 
+        if (other.tag == "EnemyAnimalsOOP")
+        {
+            other.GetComponent<Animator>().SetTrigger("death");
+            Destroy(other);
+            Destroy(other.GetComponent<EnemyBase>());
+            Destroy(other.gameObject, 15);
+        }
+
+        if (other.tag == "EnemyTurretOOP")
+        {
+            other.GetComponent<Animator>().SetTrigger("death");
+            Destroy(other);
+            Destroy(other.GetComponent<EnemyBase>());
+            Destroy(other.gameObject, 15);
+        }
+
+        if (other.tag == "Sniper")
+        {
+            other.GetComponent<Animator>().SetTrigger("death");
+            Destroy(other);
+            Destroy(other.GetComponent<EnemyBase>());
+            Destroy(other.gameObject, 15);
+        }
+
         // Уничтожение пули, если она коснётся любого предмета
         Destroy(gameObject);
     }
