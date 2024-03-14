@@ -6,8 +6,8 @@ public class Sniper : Turret
 {
     public override void Attack()
     {
-        cooldown = 0.5;
-        area = 500;
+        cooldown = 2;
+        area = 100;
 
         if (Vector3.Distance(transform.position, player.transform.position) < area)
         {
